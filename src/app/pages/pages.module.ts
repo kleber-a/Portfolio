@@ -7,6 +7,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { SharedModule } from '../shared/shared.module';
 import {MatIconModule} from '@angular/material/icon';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 
@@ -22,7 +24,8 @@ import {MatIconModule} from '@angular/material/icon';
   imports: [
     CommonModule,
     SharedModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule
   ]
 })
 export class PagesModule { }

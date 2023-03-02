@@ -1,0 +1,136 @@
+@import '../../../config_scss/rem-calc.scss';
+:host{
+    
+    main{
+        width: 82%;
+        height: 100%;
+        position: absolute;
+        left: 18%;
+        background-color: rgba(4, 4, 5, 1);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 rem-calc(10);
+        flex-wrap: wrap;
+        overflow: auto;
+
+        .container{
+            width: 90%;
+          
+            .panel{
+                background-color: rgba(35, 27, 66, 0.6);
+                border-radius: 5px;
+                margin: rem-calc(20) 0 ;
+               
+
+                &_title{
+                    height: rem-calc(40);
+                    font-size: 1.2rem;
+                    font-weight: 800;
+                    color: #FFF;
+                    justify-content: center;
+                }
+                &_description{
+                    justify-content: center;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    color: #FFF;
+                 
+                }
+                h2{
+                    color: #FFF;
+                }
+                p{
+                    color: #FFF;
+                }
+            }
+        }
+
+    }
+
+    @media (max-width: 580px) and (min-width: 366px) {
+        main{
+            width: 100vw;
+            left: 0;
+            top:18%;
+            position: absolute;
+            background-color: #040405;
+            display: block;
+            flex-wrap: wrap;
+            overflow: auto;
+
+            .container{
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            
+                .panel{
+                    align-items: center;
+                    
+                    &_title{
+                        height: rem-calc(80);
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: #FFF;
+                        justify-content: center;
+                    }
+                    &_description{
+                        justify-content: center;
+                        font-size: 0.8rem;
+                        font-weight: 500;
+                        color: #FFF;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+
+        }
+    }
+
+    @media (max-width: 365px){
+        main{
+            width: 100vw;
+            left: 0;
+            top:18%;
+            position: absolute;
+            background-color: #040405;
+            display: block;
+            flex-wrap: wrap;
+            overflow: auto;
+
+            .container{
+                width: 90%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+         
+                .panel{
+                    align-items: center;
+                    
+                    &_title{
+                        height: rem-calc(80);
+                        font-size: 0.8rem;
+                        font-weight: 500;
+                        color: #FFF;
+                        justify-content: center;
+                    }
+                    &_description{
+                        justify-content: center;
+                        font-size: 0.6rem;
+                        font-weight: 500;
+                        color: #FFF;
+                        flex-wrap: wrap;
+                      
+                    }
+                }
+            }
+
+        }
+        
+    }
+}
