@@ -8,16 +8,17 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        background-color: #0F0C41;
+        background-color: #231b42;
         align-items: center;
         justify-content: center;
+        border-radius: rem-calc(2);
         div{
             display: flex;
             align-items: center;
             justify-content: center;
             img{
                 width: 80%;
-                border: 8px solid #6231f1;
+                border: 8px solid #FFF;
                 border-radius: 50%;
             }
         }
@@ -31,7 +32,7 @@
             margin: rem-calc(20) 0;
             a{
                 font-size: rem-calc(15);
-                color: #6231f1;    
+                color: #FFF;    
                 margin: rem-calc(10) 0;
             }
         }
@@ -45,7 +46,7 @@
             display: flex;
             flex-direction: column;
             position: absolute;
-            background-color: #0F0C41;
+            background-color: #231b42;
             align-items: center;
             justify-content: center;
 
@@ -63,7 +64,7 @@
                 
                 a{
                     font-size: rem-calc(10);
-                    color: #6231f1;
+                    color: #FFF;
                     margin: 0 rem-calc(5);
                     border-left: 1px solid #FFF;
                     border-right: 1px solid #FFF;
