@@ -1,0 +1,128 @@
+@import '../../../config_scss/rem-calc.scss';
+:host{
+    
+    main{
+        width: 82%;
+        height: 100%;
+        position: absolute;
+        left: 18%;
+        background-color: rgba(4, 4, 5, 1);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 rem-calc(10);
+        flex-wrap: wrap;
+        overflow: auto;
+        .box_image{
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 90%;
+                border-radius: rem-calc(10);
+            }
+            ul{
+                width: 90%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                a{
+                    width: rem-calc(60);
+                    height: rem-calc(60);
+                    margin: rem-calc(10) 10%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                a:hover{
+                    border-radius: 12px;
+                    border: 2px solid #ff3a5e;
+                    cursor: pointer;
+                }
+                li{
+                    
+
+                    img{
+                        width: 40px;
+                    }
+                }
+            }
+
+        }
+
+        .box_text{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            
+            .about{
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: #ff3a5e;
+            }
+            h2{
+                font-size: 3rem;
+                font-weight: 500;
+                margin: rem-calc(18) 0;
+                color: #FFF;
+                line-height: 100%;         
+            }
+            h3{
+                font-size: 1.8rem;
+                font-weight: 400;
+                margin: rem-calc(15) 0;
+                color: #c73abb;
+            }
+            p{
+                width: 100%;
+                font-size: 1.2rem;
+                color:#d8d8d8;
+                text-align: justify;
+                word-break: break-all;
+                line-height: 160%;
+                margin-right:rem-calc(2);
+            }
+           
+        }
+    }
+
+    @media (max-width: 580px) {
+        main{
+            width: 100vw;
+            left: 0;
+            top:18%;
+            position: absolute;
+            background-color: #040405;
+            display: block;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            overflow: auto;
+            
+            .box_image{
+                width: 80%;
+                margin: 0 auto;
+                
+            }
+            .box_text{
+                width: 80%;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            
+                h2{
+                    font-size: 2rem;
+                }
+            }
+        }
+
+    }
+
+
+}
