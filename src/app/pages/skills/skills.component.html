@@ -1,1 +1,22 @@
 <app-header></app-header>
+<main>
+    <div class="description">
+        <h2>Conhecimentos</h2>
+        <div>
+            <p *ngIf="!isSelected" style="color: #FFF;">{{description}}</p>
+            <p *ngIf="isSelected" style="color: #FFF;">{{description}}</p>
+
+        </div>
+
+    </div>
+    <div class="tecnology">
+        <div *ngFor="let item of list; let i = index" (click)="selected(item.id, i)"
+            [ngClass]="{'noSelected': item.id !== selecionado, 'selected': item.id === selecionado}">
+
+            <p>{{i+1}}</p>
+
+        </div>
+    </div>
+</main>
+
+<!-- -->

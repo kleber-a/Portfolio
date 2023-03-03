@@ -1,0 +1,47 @@
+@import '../style_scss/main.scss';
+@import '../../../config_scss/rem-calc.scss';
+
+:host{
+    main{
+        
+    .description{
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: rem-calc(20) 0;
+        h2{
+            font-size: 3rem;
+            color: #FFF;
+            font-weight: 500;
+        }
+    }
+    .tecnology{
+        width: 48%;        
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        div{
+            width: 80px;
+            height: 80px;
+            margin: rem-calc(10) 6%;
+        }
+    }
+
+
+
+
+    .noSelected{
+        background-color: aliceblue;
+        width: 80px;
+        height: 80px;
+    }
+    .selected{
+        background-color: blue;
+        width: 80px;
+        height: 80px;
+    }
+  }   
+}
