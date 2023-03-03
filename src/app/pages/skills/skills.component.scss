@@ -3,45 +3,179 @@
 
 :host{
     main{
-        
+    //Descrição
     .description{
         width: 48%;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-start;
+        justify-content: space-evenly;
         padding: rem-calc(20) 0;
+        
+        &_box{
+            width: 100%;
+            padding: rem-calc(10) rem-calc(20);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            overflow: auto;
         h2{
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #FFF;
             font-weight: 500;
+            word-break: break-all;
         }
+        p{
+            font-size: 1rem;
+            font-weight: 400;
+            word-break: break-all;
+        }
+        .textSelected{
+            color: #FFF;
+            font-weight: 400;
+            text-align: justify;
+            transition: 1000ms linear;
+            animation: changeColor 2s ;
+            word-break: break-all;
+        }
+        @keyframes changeColor {
+            0% {
+              color: rgba(4, 4, 5, 1);
+            }
+            50% {
+              color: rgba(255,255,255, 0.5);
+            }
+            100% {
+              color: rgba(255,255,255, 1);
+            }
+          }
     }
+
+        //Painel
+        .panel{
+            width: 100%;            
+            div{
+                width: 100%;
+                height: rem-calc(200);
+                overflow: auto;
+               
+               ul{
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    flex-direction: row;
+                    list-style-type: none;
+                    overflow: auto;
+
+                    .first{
+                        width: 70%;
+                       
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        h3{
+                            font-weight: 600;
+                        }
+
+                    }
+                    .second{
+                        width: 30%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        p{
+                            font-size: 1rem;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    //Tecnologias
     .tecnology{
         width: 48%;        
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        overflow: auto;
         div{
-            width: 80px;
-            height: 80px;
             margin: rem-calc(10) 6%;
+            border-radius: rem-calc(15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div:hover{
+            background-color: #231b42;
+        }
+        .noSelected{
+            background-color: rgba(4, 4, 5, 1);
+            width: rem-calc(90);
+            height: rem-calc(90);
+            transition: 1000ms linear;
+        }
+        .selected{
+            border: 2px solid #FA0000;
+            background-color: rgba(35, 27, 66, 0.7);
+            width: rem-calc(90);
+            height: rem-calc(90);
+            transition: 800ms linear;
+        }
+        
+    }
+  }  
+  
+  @media(max-width: 580px){
+    main{
+        display: flex;
+    .description{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        padding: rem-calc(20) 0;
+
+        h2{
+            font-size: 1.5rem;
+            color: #FFF;
+            font-weight: 500;
+            word-break: break-all;
+        }
+        p{
+            font-size: 1rem;
+            font-weight: 400;
+            word-break: break-all;
+        }
+
+        }   
+        .tecnology{
+            width: 28%;        
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            .noSelected{
+                background-color: rgba(4, 4, 5, 1);
+                width: 80px;
+                height: 80px;
+                transition: 1000ms linear;
+            }
+            .selected{
+                border: 2px solid #FA0000;
+                background-color: rgba(35, 27, 66, 0.7);
+                width: 80px;
+                height: 80px;
+                transition: 800ms linear;
+            }
+        }
+    
+    
         }
     }
-
-
-
-
-    .noSelected{
-        background-color: aliceblue;
-        width: 80px;
-        height: 80px;
-    }
-    .selected{
-        background-color: blue;
-        width: 80px;
-        height: 80px;
-    }
-  }   
 }
