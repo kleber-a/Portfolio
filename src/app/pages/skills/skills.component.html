@@ -1,1 +1,36 @@
 <app-header></app-header>
+<main>
+    <div class="description">
+        <div class="description_box">
+            <h2>Conhecimentos</h2>
+            <p *ngIf="!isSelected" [ngClass]="{'textSelected': !isSelected}">{{description}}</p>
+            <p *ngIf="isSelected" [ngClass]="{'textSelected': isSelected}">{{description}}</p>
+        </div>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+            <mat-expansion-panel-header class="panel_header">
+                <mat-panel-title class="panel_title">
+                    Cursos
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="book"></mat-icon>
+
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="panel_list">
+                <ul *ngFor="let item of cursos">
+                    <li class="first"><h3>{{item.titulo}}</h3></li>
+                    <li class="second"><p>{{item.horas}}</p></li>
+                </ul>
+            </div>
+        </mat-expansion-panel>
+
+    </div>
+    <div class="tecnology">
+        <div *ngFor="let item of list; let i = index" (click)="selected(item.id, i)"
+            [ngClass]="{'noSelected': item.id !== selecionado, 'selected': item.id === selecionado}">
+
+            <img [src]="item.icon">
+
+        </div>
+    </div>
+</main>
+
+<!-- -->
