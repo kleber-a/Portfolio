@@ -8,9 +8,9 @@ import { ContactComponent } from './contact/contact.component';
 import { SharedModule } from '../shared/shared.module';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
-
-
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -25,7 +25,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
     CommonModule,
     SharedModule,
     MatIconModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatButtonModule
   ]
 })
 export class PagesModule { }
