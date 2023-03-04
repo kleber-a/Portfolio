@@ -15,7 +15,7 @@
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <div class="panel_list">
-                <ul *ngFor="let item of cursos">
+                <ul *ngFor="let item of courses">
                     <li class="first"><h3>{{item.titulo}}</h3></li>
                     <li class="second"><p>{{item.horas}}</p></li>
                 </ul>
@@ -24,10 +24,13 @@
 
     </div>
     <div class="tecnology">
-        <div *ngFor="let item of list; let i = index" (click)="selected(item.id, i)"
-            [ngClass]="{'noSelected': item.id !== selecionado, 'selected': item.id === selecionado}">
+        <app-search (emmitSearch)="getSelect($event)" ></app-search>
+        <div *ngFor="let item of skills; let i = index">
+            <div *ngIf="item.nome == select">
+                <img [src]="item.icon">
+               
 
-            <img [src]="item.icon">
+            </div>
 
         </div>
     </div>

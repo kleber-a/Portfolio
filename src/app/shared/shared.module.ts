@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -22,7 +23,8 @@ import { SearchComponent } from './search/search.component';
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ]
 })
 export class SharedModule { }
