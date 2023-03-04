@@ -7,16 +7,16 @@ import { DadosForm } from '../models/dadosForm.models';
 })
 export class FormService {
 
-  public dados: DadosForm | any = {
-    nome: "ola",
-    email: "ola@email.com",
-    comentario: "testestes"
-  }
-
   constructor(private fireStore: Firestore) { }
 
-  add(place: DadosForm) {
+  async add(place: DadosForm) {
     const placeRef = collection(this.fireStore, 'Dados');
-    return addDoc(placeRef, place);
+    return await addDoc(placeRef, place)
+    .then((res)=>{
+      console.log(res)
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
   }
 }
