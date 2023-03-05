@@ -1,30 +1,18 @@
 @import '../../../config_scss/rem-calc.scss';
-main{
-    width: 82%;
-    height: 100%;
-    position: absolute;
-    left: 18%;
-    background-color: rgba(4, 4, 5, 1);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 rem-calc(10);
-    flex-wrap: wrap;
-    overflow: auto;
-}
 
-@media (max-width: 580px) {
     main{
-        width: 100vw;
-        left: 0;
-        top:18%;
+        width: 82%;
+        background-color: #1C1D20;
+        left: 18%;
         position: absolute;
-        background-color: #040405;
-        display: block;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        overflow: auto;
+        min-height: 100%;
     }
-}
+    @media (max-width: 580px) {
+        main{
+            width: 100vw;
+            left: 0;
+            min-height: calc(100% - rem-calc(20));
+            top:10%;
+            position: absolute;
+        }
+    }

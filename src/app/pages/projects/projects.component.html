@@ -1,10 +1,16 @@
 <app-header></app-header>
 <main>
     <div class="container">
-        <div *ngFor="let item of list" [ngStyle]="{'border-color': item.color}">
-            <h3>{{item.titulo}}</h3>
-            <p>{{item.descricao}}</p>
-            <a [ngStyle]="{'color': item.color}">Vizualizar projeto</a>
+        <div class="title">
+            <h2>Projetos</h2>
+        </div>
+        <div class="project">
+            <div *ngFor="let item of list" [ngStyle]="{'border-color': item.color}">
+                <h3>{{item.titulo}}</h3>
+                <p>{{item.descricao}}</p>
+                <a [ngStyle]="{'color': item.color}">Vizualizar projeto</a>
+            </div>
         </div>
     </div>
+    <app-footer></app-footer>
 </main>

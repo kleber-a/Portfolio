@@ -1,10 +1,12 @@
 <app-header></app-header>
 <main>
     <div class="container">
-        <h2 style="color: #FFF;">Experiência:</h2>
-        <mat-accordion>
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel"
-                *ngFor="let item of lista">
+        <div class="title">
+            <h2>Experiência:</h2>
+        </div>
+        <mat-accordion *ngFor="let item of lista">
+            <mat-expansion-panel [expanded]="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+                class="panel">
                 <mat-expansion-panel-header class="panel_header">
                     <mat-panel-title class="panel_title">
                         {{item.titulo}}
@@ -13,9 +15,12 @@
                         {{item.ano}}
                     </mat-panel-description>
                 </mat-expansion-panel-header>
-                <h2>{{item.empresa}}</h2>
-                <p>{{item.descricao}}</p>
+                <div>
+                    <h2>{{item.empresa}}</h2>
+                    <p>{{item.descricao}}</p>
+                </div>
             </mat-expansion-panel>
         </mat-accordion>
     </div>
+    <app-footer></app-footer>
 </main>

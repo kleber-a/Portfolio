@@ -1,71 +1,66 @@
 @import '../../../config_scss/rem-calc.scss';
+@import '../style_scss/main.scss';
 :host{
-    
-    main{
-        width: 82%;
-        height: 100%;
-        position: absolute;
-        left: 18%;
-        background-color: rgba(4, 4, 5, 1);
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        padding: 0 rem-calc(10);
-        flex-wrap: wrap;
-        overflow: auto;
-
         .container{
-            width: 90%;
+            width: 100%;
+            height: 100vh;
+          
+            .title{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                
+                
+                h2{
+                    color: #E0E0E0;
+                    font-size: 2rem;
+                    margin: rem-calc(20) 0;
+                }
+            }
           
             .panel{
+                width: 90%;
+                
                 background-color: rgba(35, 27, 66, 0.6);
                 border-radius: 5px;
-                margin: rem-calc(20) 0 ;
+                margin: rem-calc(20) auto ;
                
 
                 &_title{
                     height: rem-calc(40);
                     font-size: 1.2rem;
                     font-weight: 800;
-                    color: #FFF;
+                    color: #E0E0E0;
                     justify-content: center;
                 }
                 &_description{
                     justify-content: center;
                     font-size: 0.8rem;
                     font-weight: 500;
-                    color: #FFF;
+                    color: #E0E0E0;
                  
                 }
                 h2{
-                    color: #FFF;
+                    color: #E0E0E0;
                 }
                 p{
-                    color: #FFF;
+                    color: #E0E0E0;
                 }
             }
         }
 
-    }
+    
 
     @media (max-width: 580px) and (min-width: 366px) {
-        main{
-            width: 100vw;
-            left: 0;
-            top:18%;
-            position: absolute;
-            background-color: #040405;
-            display: block;
-            flex-wrap: wrap;
-            overflow: auto;
-
+       
             .container{
-                width: 100%;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+                
+                .title{
+                    h2{
+                        color: #E0E0E0;
+                        font-size: 1.5rem;
+                    }
+                }
             
                 .panel{
                     align-items: center;
@@ -74,63 +69,59 @@
                         height: rem-calc(80);
                         font-size: 1rem;
                         font-weight: 500;
-                        color: #FFF;
+                        color:#E0E0E0;
                         justify-content: center;
                     }
                     &_description{
                         justify-content: center;
                         font-size: 0.8rem;
                         font-weight: 500;
-                        color: #FFF;
+                        color:#E0E0E0;
                         flex-wrap: wrap;
                     }
                 }
             }
 
         }
-    }
+    
 
     @media (max-width: 365px){
-        main{
-            width: 100vw;
-            left: 0;
-            top:18%;
-            position: absolute;
-            background-color: #040405;
-            display: block;
-            flex-wrap: wrap;
-            overflow: auto;
 
             .container{
-                width: 90%;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-         
+                
+                .title{                    
+                    
+                    h2{
+                        color: #E0E0E0;
+                        font-size: 1.2rem;
+                        margin: rem-calc(2) 0;
+                    }
+                }       
                 .panel{
                     align-items: center;
+                    margin: rem-calc(10) auto ;
                     
                     &_title{
                         height: rem-calc(80);
                         font-size: 0.8rem;
                         font-weight: 500;
-                        color: #FFF;
+                        color:#E0E0E0;
                         justify-content: center;
                     }
                     &_description{
                         justify-content: center;
                         font-size: 0.6rem;
                         font-weight: 500;
-                        color: #FFF;
+                        color:#E0E0E0;
                         flex-wrap: wrap;
                       
                     }
+                    div{
+                        height: 200px;
+                        overflow: auto;
+                    }
                 }
             }
-
-        }
         
     }
 }

@@ -1,14 +1,14 @@
-
+@import '../../../config_scss/rem-calc.scss';
 :host{
-
+    width: 100%;
     footer{
         width: 100%;
+        height: rem-calc(60); 
         position: absolute;
-        background: linear-gradient(to right, #231b42, #c91f37, #e79a00);
-        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        background: linear-gradient(to right, #231b42, #c91f37, #231b42);//#e79a00)
+        box-shadow: 0px 0px px rgba(255, 255, 255, 0.5);
         bottom: 0;
-        height: auto; 
-        padding: 0 2%;
+        padding: 0 rem-calc(5);
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -20,25 +20,79 @@
         .direitos{
             display: flex;
             align-items: center;
+           
         }
         .titulo{
             display: flex;
             align-items: center;
             justify-content: center;
-            h3{
-                font-size: 1.5rem;
+            p{
+                font-size: 1.0rem;
                 font-weight: 500;
             }
         }
         .contato{
+           
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             text-align: center;
-            li{
-                font-size: .8rem;
-            }
+            flex-wrap: wrap;
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                line-height: 5px;
+        }
+        }
+        p{
+            font-size: .7rem;
+            margin: 0 rem-calc(2);
+            word-break: break-all;
         }
 
     }
 
+    @media(max-width: 580px){
+        footer{
+            width: 100%;
+            height: rem-calc(50);
+            .titulo{
+
+                p{
+                font-size: 0.8rem;
+                font-weight: 500;
+                }
+            }
+            .direitos{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            p{
+                text-align: center;
+                font-size: .6rem;
+            }
+        }
+    }
+
+    @media(max-width: 427px){
+        footer{
+        h3{
+            background-color: #c91f37;
+            font-size: 0.2rem;
+        }
+        p{
+            font-size: 0.5rem;
+            line-height: 10px;
+        }
+    }
+    }
+
+    @media(max-width: 349px){
+        footer{
+            p{
+                font-size: .3rem;
+            }
+        }
+    }
 }
