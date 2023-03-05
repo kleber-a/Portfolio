@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
+
+
+  constructor(){}
+
   public panelOpenState: boolean = false
 
   public lista: Array<any> = [

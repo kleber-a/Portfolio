@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { dadosFooter } from 'src/app/models/dadosFooter.models';
 import { FooterService } from 'src/app/service/footer.service';
 
@@ -7,7 +7,7 @@ import { FooterService } from 'src/app/service/footer.service';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent implements OnInit, OnDestroy {
 
   public dadosFooter: dadosFooter | any;
 
@@ -18,6 +18,10 @@ export class FooterComponent implements OnInit {
       next: (res) => { this.dadosFooter = res },
       error: (error) => { console.log(error) }
     })
+  }
+
+  ngOnDestroy(): void {
+    console.log("Rodapé ocultado")
   }
 
 }

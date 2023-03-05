@@ -11,10 +11,12 @@
             <hr>
         </div>
         <div class="view">
-            <img src="../../../assets/projects/System.gif">
+            <img [src]="dados?.image">
             <ul>    
-                <li><a>Link github</a></li>
-                <li><a>Teste a aplicação</a></li>
+                <li><a [href]="dados?.github" target="_blank">Link github</a></li>
+                <li [ngStyle]="{'display': dados?.test === ''? 'none': 'block'}">
+                    <a [href]="dados?.test" target="_blank">Teste aqui</a>
+                </li>
             </ul>
         </div>
     </main>

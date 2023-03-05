@@ -2,6 +2,7 @@ import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { DadosForm } from 'src/app/models/dadosForm.models';
 import { FormService } from 'src/app/service/form.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EmitterService } from 'src/app/service/emitter.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnChanges {
 
-  constructor(private formService: FormService, private formBuilder: FormBuilder) { }
+  constructor(private formService: FormService, 
+    private formBuilder: FormBuilder,) { }
+
 
   ngOnChanges(changes: SimpleChanges): void{
     console.log(changes)
