@@ -6,6 +6,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ModalProjectComponent } from './modal-project/modal-project.component';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -13,18 +15,21 @@ import {MatSelectModule} from '@angular/material/select';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    ModalProjectComponent
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    ModalProjectComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
   ]
 })
 export class SharedModule { }

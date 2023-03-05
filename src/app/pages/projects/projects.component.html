@@ -1,14 +1,15 @@
 <app-header></app-header>
+<app-modal-project [open]="open" [dados]="dados" (changeOpen)="getOpenModal($event)" ></app-modal-project>
 <main>
     <div class="container">
         <div class="title">
             <h2>Projetos</h2>
         </div>
         <div class="project">
-            <div *ngFor="let item of list" [ngStyle]="{'border-color': item.color}">
+            <div *ngFor="let item of projects" [ngStyle]="{'border-color': item.color}">
                 <h3>{{item.titulo}}</h3>
                 <p>{{item.descricao}}</p>
-                <a [ngStyle]="{'color': item.color}">Vizualizar projeto</a>
+                <button [ngStyle]="{'color': item.color}" (click)="openModal(item)" >Vizualizar projeto</button>
             </div>
         </div>
     </div>

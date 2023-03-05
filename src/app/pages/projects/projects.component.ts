@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Project } from 'src/app/models/projects.models';
+import { ProjectService } from 'src/app/service/project.service';
 
 
 @Component({
@@ -6,58 +8,30 @@ import { Component } from '@angular/core';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit{
 
-  public list: Array<any> = [
-    {
-      titulo: 'Calling-System',
-      descricao:
-        `
-      Projeto desenvolido para gerenciar 
-      solicitações de chamados de uma empresa. Foi utizado
-      React junto ao javaScript e também o firebase como o 
-      banco de dados.
-      `,
-      image: "../../../assets/projects/System.gif",
-      color: "#ff3a5e"
-    },
-    {
-      titulo: 'Calling-System',
-      descricao:
-        `
-      Projeto desenvolido para gerenciar 
-      solicitações de chamados de uma empresa. Foi utizado
-      React junto ao javaScript e também o firebase como o 
-      banco de dados.
-      `,
-      image: "../../../assets/projects/System.gif",
-      color: "#00a3ff"
-    },
-    {
-      titulo: 'Calling-System',
-      descricao:
-        `
-      Projeto desenvolido para gerenciar 
-      solicitações de chamados de uma empresa. Foi utizado
-      React junto ao javaScript e também o firebase como o 
-      banco de dados.
-      `,
-      image: "../../../assets/projects/System.gif",
-      color: "#a6fb98"
-    },
-    {
-      titulo: 'Calling-System',
-      descricao:
-        `
-      Projeto desenvolido para gerenciar 
-      solicitações de chamados de uma empresa. Foi utizado
-      React junto ao javaScript e também o firebase como o 
-      banco de dados.
-      `,
-      image: "../../../assets/projects/System.gif",
-      color: "#ff3a5e"
-    },
+  public projects : Project[] | undefined;
+
+  //Enviar dados para modal
+  public dados: Project | undefined;
+  public open: boolean = false;
+
+  constructor(private projectService: ProjectService){}
+
+  ngOnInit(): void {
+    this.projects = this.projectService.getAll();
+  }
+  
+  public openModal(value: Project){
+    this.dados = value;
+    this.open = true;
     
-  ]
+
+  }
+  
+  public getOpenModal(value:boolean){
+    this.open = value;
+
+  }
 
 }
