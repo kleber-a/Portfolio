@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { EmitterService } from 'src/app/service/emitter.service';
 
 @Component({
@@ -6,41 +6,37 @@ import { EmitterService } from 'src/app/service/emitter.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
 
   @Output() public changeOpen = new EventEmitter();
 
   public close: boolean = true;
-  constructor(private emitte: EmitterService)  { }
 
+  public hideFooter: string = "Ocultar rodapé"
+  constructor(private emitter: EmitterService) { }
   ngOnInit(): void {
-
-    this.emitte.emitEvent.subscribe({
-      next: (res: any)=> {
-        if(res === false){
-          this.emitte.setEvent(true)
-          this.close = true
+    this.emitter.eventChange.subscribe({
+      next: (res: boolean) => {
+        if (res === true) {
+          this.hideFooter = "Ocultar rodapé"
+        } else {
+          this.hideFooter = "Mostrar rodapé"
         }
       }
     })
-
-      this.emitte.setEvent(true)
     
-
-   
-   
+    
   }
 
-  public teste: boolean = true;
-  public closeFooter() {
-    if (this.close == true) {
-      this.emitte.setEvent(false)
-      this.close = false;
-    }else{
-      this.emitte.setEvent(true);
-      this.close = true;
 
-    }
+  public  closeFooter() {
+      if (this.close === true) {
+        this.close = false;
+        this.emitter.setEvent(this.close)
+      }else if(this.close === false){
+        this.close = true;
+        this.emitter.setEvent(this.close)
+      }
   }
 
 }

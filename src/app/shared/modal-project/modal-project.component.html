@@ -1,13 +1,13 @@
 <div class="modal" *ngIf="open" >
-    <main class="container_modal">
+    <main class="container_modal" [ngStyle]="{'border-color':dados?.color}">
         <div class="close">
             <button (click)="closeModal()">
                 <mat-icon class="icon">close</mat-icon>
             </button>
         </div>
         <div class="description">
-            <h3>{{dados?.titulo}}</h3>
-            <p>{{dados?.descricao}}</p>
+            <h3 >{{dados?.titulo}}</h3>
+            <p >{{dados?.descricao}}</p>
             <hr>
         </div>
         <div class="view">

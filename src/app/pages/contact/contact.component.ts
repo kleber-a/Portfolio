@@ -1,18 +1,28 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
-import { DadosForm } from 'src/app/models/dadosForm.models';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormService } from 'src/app/service/form.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmitterService } from 'src/app/service/emitter.service';
+
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnChanges {
+export class ContactComponent implements OnChanges, OnInit {
 
   constructor(private formService: FormService, 
-    private formBuilder: FormBuilder,) { }
+    private formBuilder: FormBuilder, private emitter: EmitterService) { }
+
+    public close: boolean = true
+
+  ngOnInit(): void {
+  this.emitter.emitEvent.subscribe({
+    next: (res: any)=>{this.close = res}
+  })
+  console.log(this.close)
+  
+}
 
 
   ngOnChanges(changes: SimpleChanges): void{

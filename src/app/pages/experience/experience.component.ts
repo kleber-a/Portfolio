@@ -1,14 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EmitterService } from 'src/app/service/emitter.service';
 
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })
-export class ExperienceComponent {
+export class ExperienceComponent implements OnInit{
 
+  constructor(private emitter: EmitterService){}
 
-  constructor(){}
+  public close: boolean = true
+  ngOnInit(): void {
+    this.emitter.emitEvent.subscribe({
+      next: (res: any)=>{this.close = res}
+    })    
+  }
 
   public panelOpenState: boolean = false
 

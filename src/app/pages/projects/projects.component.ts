@@ -17,13 +17,16 @@ export class ProjectsComponent implements OnInit{
   public dados: Project | undefined;
   public open: boolean = false;
 
-  public closeOpen: boolean = true;
+  constructor(private projectService: ProjectService, private emitter: EmitterService ){}
 
-  constructor(private projectService: ProjectService ){}
+  public close: boolean = true
 
   ngOnInit(): void {    
     this.projects = this.projectService.getAll();
 
+    this.emitter.emitEvent.subscribe({
+      next: (res: any)=>{this.close = res}
+    })
 
   }
 

@@ -10,6 +10,8 @@
         <a [routerLink]="'/contact'">Contato</a>
     </nav>
     <div>
-        <label (click)="closeFooter()" style="color: #FFF; cursor: pointer;">Teste</label>
+        <label  style="color: #FFF; cursor: pointer;" (click)="closeFooter()" >
+            {{hideFooter}}
+        </label>
     </div>
 </header>
