@@ -1,23 +1,22 @@
 @import '../../../config_scss/rem-calc.scss';
 :host{
     width: 100%;
-    form{
+    .form{
         width: 75%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border: 1px solid #E0E0E0;
-        background-color: rgba(28, 29, 32, 0.5);
-        padding: rem-calc(15) rem-calc(20);
+        padding: 0 rem-calc(20);
         margin: 0 auto;
         border-radius: rem-calc(10);
-        height: rem-calc(40);
+        
         input{
             width: 95%;
             background: none;
             border: none;
             font-size: rem-calc(18);
             color: #FFF;
+            border: 1px solid #E0E0E0;
 
             &::placeholder{
                 color: #FFF;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Course } from 'src/app/models/courses.models';
 import { Skill } from 'src/app/models/skills.models';
 import { CourseService } from 'src/app/service/course.service';
+import { EmitterService } from 'src/app/service/emitter.service';
 import { SkillService } from 'src/app/service/skill.service';
 
 @Component({
@@ -20,11 +21,20 @@ export class SkillsComponent implements OnInit{
   public panelOpenState: boolean = false;
   public isSelected: boolean = false;
 
-  constructor(private skillService: SkillService, private courseService: CourseService){}
+  constructor(private skillService: SkillService, 
+    private courseService: CourseService, 
+    private emitter: EmitterService){}
+
+    public close: boolean = true
 
   ngOnInit():void{
     this.skills = this.skillService.getAll();
     this.courses = this.courseService.getAll();
+
+    this.emitter.emitEvent.subscribe({
+      next: (res: any)=>{this.close = res}
+    })
+
   }
 
   public getSelect(value:string){

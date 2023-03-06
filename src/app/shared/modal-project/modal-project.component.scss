@@ -13,7 +13,7 @@
         .container_modal{
             width: 70%;
             background-color: rgba(224, 224, 224, 1);
-            border: 2px solid #ff3a5e;
+            border: 2px solid;
             border-radius: 15px;
             overflow: auto;
             .close{
@@ -49,12 +49,12 @@
               
                 padding: rem-calc(20) rem-calc(20);
                 h3{
-                    color: #ff3a5e;
+                    color: #111;
                     font-size: 1.4rem;
                     font-weight: 500;
                 }
                 p{
-                    color: #ff3a5e;
+                    color: #111;
                     font-size: 0.9rem;
                     text-align: justify;
                 }
@@ -80,6 +80,7 @@
                         a{
                             font-size: 1.2rem;
                             font-weight: 400;
+                            color: #111;
                         }
                     }
                 }

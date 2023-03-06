@@ -13,7 +13,7 @@ export class FormService {
     const placeRef = collection(this.fireStore, 'Dados');
     return await addDoc(placeRef, place)
     .then((res)=>{
-      console.log(res)
+      alert('Mensagem Enviada')
     })
     .catch((error)=>{
       console.log(error);

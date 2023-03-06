@@ -1,20 +1,22 @@
 <div class="modal" *ngIf="open" >
-    <main class="container_modal">
+    <main class="container_modal" [ngStyle]="{'border-color':dados?.color}">
         <div class="close">
             <button (click)="closeModal()">
                 <mat-icon class="icon">close</mat-icon>
             </button>
         </div>
         <div class="description">
-            <h3>{{dados?.titulo}}</h3>
-            <p>{{dados?.descricao}}</p>
+            <h3 >{{dados?.titulo}}</h3>
+            <p >{{dados?.descricao}}</p>
             <hr>
         </div>
         <div class="view">
-            <img src="../../../assets/projects/System.gif">
+            <img [src]="dados?.image">
             <ul>    
-                <li><a>Link github</a></li>
-                <li><a>Teste a aplicação</a></li>
+                <li><a [href]="dados?.github" target="_blank">Link github</a></li>
+                <li [ngStyle]="{'display': dados?.test === ''? 'none': 'block'}">
+                    <a [href]="dados?.test" target="_blank">Teste aqui</a>
+                </li>
             </ul>
         </div>
     </main>
