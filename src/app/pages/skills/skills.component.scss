@@ -1,0 +1,149 @@
+@import '../style_scss/main.scss';
+@import '../../../config_scss/rem-calc.scss';
+
+:host{
+    main{
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+
+            .skill{
+                width: 40%;
+                height: 100%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+              
+                flex-direction: column;
+                .description{
+                    width: 100%;
+                    height: rem-calc(150);
+                
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 0 rem-calc(10);
+                    h2{
+                        color: #e0e0e0;
+                        font-size: 1.5rem;
+                    }
+                    p{
+                        color: #e0e0e0;
+                        font-size: 0.9rem;
+                        text-align: justify;
+                    }
+                }            
+            .technology{
+                width: 100%;
+                height: rem-calc(300);      
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+
+                .box_icon{
+                    width: 100%;
+                    div{
+                        width: 100%;
+                        height: rem-calc(250);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        } // Fim skill
+        .courses{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .panel{
+                width: 100%;
+                background-color: #e0e0e0;
+                border: 2px solid #1C1D20;
+                border-radius: 15px;
+                &_title{
+                    color: #1C1D20;
+                }           
+                &_list{
+                    width: 100%;
+                    height: rem-calc(200);
+                    overflow: auto;
+                    border-radius: 15px;
+                    padding: 0 rem-calc(10);
+                } 
+                ul{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-around;
+                    border: 1px solid #1C1D20;
+                    border-radius: 15px;
+                        .title{
+                            padding: 0 rem-calc(10);
+                            h3{
+                                font-size: 0.8rem;
+                                color: #1C1D20;
+                                font-weight: 600;
+                            }
+                        }
+                        .hours{
+                            padding: 0 rem-calc(10);
+                            p{
+                                color: #1C1D20;
+                                font-size: 1rem;
+                                font-weight: 500;
+                            }               
+                        }   
+                }
+            }// Fim panel
+        }// Fim courses
+    }
+    }
+
+    @media(max-width: 580px){
+        main{
+            .container{
+                flex-direction: column;
+                .skill{
+                    width: 100%;
+                    height: 40%;
+                    justify-content: center;
+                    .description{
+                        overflow: auto;
+                    }
+                    .technology{
+                        height: rem-calc(150);
+               
+                        .box_icon{
+                            width: 100%;
+                            div{
+                                width: 100%;
+                                height: rem-calc(100);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            
+                            }
+                        }
+        
+                    }
+                }
+                .courses{
+                    width: 100%;
+                    height: 60%;
+
+                }
+            
+            }
+        }
+    }
+
+}

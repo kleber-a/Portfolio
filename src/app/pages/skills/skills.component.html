@@ -1,0 +1,47 @@
+<app-header></app-header>
+<main>
+    <div class="container">
+        <div class="skill">
+            <div class="description">
+                    <h2>Conhecimentos</h2>
+                    <p *ngIf="!isSelected" [ngClass]="{'textSelected': !isSelected}">{{description}}</p>
+                    <p *ngIf="isSelected" [ngClass]="{'textSelected': isSelected}">{{description}}</p>
+            </div>
+            <div class="technology">
+                <app-search (emmitSearch)="getSelect($event)"></app-search>
+                <div class="box_icon" *ngFor="let item of skills; let i = index">
+                    <div *ngIf="item.nome == select">
+                        <img [src]="item.icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="courses">
+            <mat-expansion-panel [expanded]="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                <mat-expansion-panel-header class="panel_header">
+                    <mat-panel-title class="panel_title">
+                        Cursos
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="book"></mat-icon>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="panel_list">
+                    <ul *ngFor="let item of courses">
+                        <li class="title">
+                            <h3>{{item.titulo}}</h3>
+                        </li>
+                        <li class="hours">
+                            <p>{{item.horas}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </mat-expansion-panel>
+        </div>
+
+    </div>
+    <app-footer *ngIf="close"></app-footer>
+</main>
+
+<!-- 
+     
+-->

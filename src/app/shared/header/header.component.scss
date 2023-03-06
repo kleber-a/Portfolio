@@ -1,0 +1,81 @@
+@import '../../../config_scss/rem-calc.scss';
+
+:host{
+
+    header{
+        width: 18%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: #231b42;
+        align-items: center;
+        justify-content: center;
+        border-radius: rem-calc(2);
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 80%;
+                border: 8px solid #FFF;
+                border-radius: 50%;
+            }
+        }
+
+        nav{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: rem-calc(20) 0;
+            a{
+                font-size: rem-calc(15);
+                color: #FFF;    
+                margin: rem-calc(10) 0;
+            }
+        }
+    }
+
+    @media (max-width: 580px) {
+
+        header{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            flex-direction: column;
+            position:static;
+            background-color: #231b42;
+            align-items: center;
+            justify-content: center;
+
+            div{
+                display: none;
+            }
+
+            nav{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: center;
+                
+                a{
+                    font-size: 0.5rem;
+                    color: #FFF;
+                    margin: 0 rem-calc(5);
+                    border-left: 1px solid #FFF;
+                    border-right: 1px solid #FFF;
+                    height: rem-calc(18);
+                    border-radius: rem-calc(5);
+                    
+                }
+            }
+        }
+
+        
+    
+    }
+
+}

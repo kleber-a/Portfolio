@@ -1,0 +1,17 @@
+<header>
+    <div>
+        <img src="../../../assets/Perfil.jpg">
+    </div>
+    <nav>
+        <a [routerLink]="''">Sobre</a>
+        <a [routerLink]="'/experience'">Experiências</a>
+        <a [routerLink]="'/projects'">Projetos</a>
+        <a [routerLink]="'/skills'">Habilidades</a>
+        <a [routerLink]="'/contact'">Contato</a>
+    </nav>
+    <div>
+        <label  style="color: #FFF; cursor: pointer;" (click)="closeFooter()" >
+            {{hideFooter}}
+        </label>
+    </div>
+</header>

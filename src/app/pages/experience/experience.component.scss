@@ -1,0 +1,127 @@
+@import '../../../config_scss/rem-calc.scss';
+@import '../style_scss/main.scss';
+:host{
+        .container{
+            width: 100%;
+            height: 100vh;
+          
+            .title{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                
+                
+                h2{
+                    color: #E0E0E0;
+                    font-size: 2rem;
+                    margin: rem-calc(20) 0;
+                }
+            }
+          
+            .panel{
+                width: 90%;
+                
+                background-color: rgba(35, 27, 66, 0.6);
+                border-radius: 5px;
+                margin: rem-calc(20) auto ;
+               
+
+                &_title{
+                    height: rem-calc(40);
+                    font-size: 1.2rem;
+                    font-weight: 800;
+                    color: #E0E0E0;
+                    justify-content: center;
+                }
+                &_description{
+                    justify-content: center;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    color: #E0E0E0;
+                 
+                }
+                h2{
+                    color: #E0E0E0;
+                }
+                p{
+                    color: #E0E0E0;
+                }
+            }
+        }
+
+    
+
+    @media (max-width: 580px) and (min-width: 366px) {
+       
+            .container{
+                
+                .title{
+                    h2{
+                        color: #E0E0E0;
+                        font-size: 1.5rem;
+                    }
+                }
+            
+                .panel{
+                    align-items: center;
+                    
+                    &_title{
+                        height: rem-calc(80);
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color:#E0E0E0;
+                        justify-content: center;
+                    }
+                    &_description{
+                        justify-content: center;
+                        font-size: 0.8rem;
+                        font-weight: 500;
+                        color:#E0E0E0;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+
+        }
+    
+
+    @media (max-width: 365px){
+
+            .container{
+                
+                .title{                    
+                    
+                    h2{
+                        color: #E0E0E0;
+                        font-size: 1.2rem;
+                        margin: rem-calc(2) 0;
+                    }
+                }       
+                .panel{
+                    align-items: center;
+                    margin: rem-calc(10) auto ;
+                    
+                    &_title{
+                        height: rem-calc(80);
+                        font-size: 0.8rem;
+                        font-weight: 500;
+                        color:#E0E0E0;
+                        justify-content: center;
+                    }
+                    &_description{
+                        justify-content: center;
+                        font-size: 0.6rem;
+                        font-weight: 500;
+                        color:#E0E0E0;
+                        flex-wrap: wrap;
+                      
+                    }
+                    div{
+                        height: 200px;
+                        overflow: auto;
+                    }
+                }
+            }
+        
+    }
+}

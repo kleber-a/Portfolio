@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "portfolio-5060b": {
+      "hosting": {
+        "Portfolio": [
+          "portfolio-5060b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "portfolio-5060b"
+  }
+}
